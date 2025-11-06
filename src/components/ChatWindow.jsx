@@ -5,9 +5,9 @@ import MessageInput from './MessageInput'
 import { channel, simulateIncoming } from '../pusherClient'
 import { messagesByChat as initialMessages } from '../mockData'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Paperclip, MoreVertical } from 'lucide-react'
+import { Search, Paperclip, MoreVertical, ArrowLeft } from 'lucide-react'
 
-export default function ChatWindow({ chatId, chatInfo }) {
+export default function ChatWindow({ chatId, chatInfo, onBack, isMobile }) {
   // messages state for the active chat
   const [messages, setMessages] = useState(() => initialMessages[chatId]?.slice() || [])
   const [typing, setTyping] = useState(false)
@@ -105,6 +105,30 @@ export default function ChatWindow({ chatId, chatInfo }) {
       <div className="flex items-center gap-5 px-7 h-18 bg-(--color-panelElevated) text-textPrimary border-b border-(--color-border)"
       style = {{padding: '10px'}}
       >
+        {isMobile && onBack && (
+          <button
+            onClick={onBack}
+            className="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-200 mr-2"
+            style={{
+              cursor: "pointer",
+              color: "#b9b9b9",
+              borderRadius: "50%",
+              transition: "all 0.25s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(255,255,255,0.12)";
+              e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "transparent";
+              e.currentTarget.style.color = "#b9b9b9";
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          >
+            <ArrowLeft size={22} />
+          </button>
+        )}
         <div className="relative w-10 h-10 rounded-full bg-(--color-border) flex items-center justify-center font-semibold">
           {chatInfo?.avatar || 'C'}
           {chatInfo?.online && (

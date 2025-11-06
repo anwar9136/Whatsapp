@@ -70,24 +70,7 @@ export default function App() {
 
         {mobileOpen && (
           <div className="fixed inset-0 z-40 flex flex-col bg-(--color-chatBg) wa-wallpaper">
-            {/* Mobile header with back button */}
-            <div className="flex items-center px-5 h-16 bg-(--color-panelElevated) text-white">
-              <button
-                onClick={() => setMobileOpen(false)}
-                className="mr-4 p-2 rounded-full hover:bg-white/10"
-                aria-label="Back"
-              >
-                <ArrowLeft size={22} />
-              </button>
-              <div className="flex-1">
-                <div className="font-semibold text-[16px]">{activeChat?.name || 'Chat'}</div>
-                <div className="text-[13px] opacity-70">{activeChat?.online ? 'Online' : 'Offline'}</div>
-              </div>
-            </div>
-
-            <div className="flex-1">
-              <ChatWindow chatId={activeChatId} chatInfo={activeChat} />
-            </div>
+            <ChatWindow chatId={activeChatId} chatInfo={activeChat} onBack={() => setMobileOpen(false)} isMobile={true} />
           </div>
         )}
       </div>
