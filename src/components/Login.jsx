@@ -31,13 +31,13 @@ export default function Login({ onLoginSuccess }) {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-[#0b141a] bg-[url('/bg-chat-room.png')] bg-cover bg-center px-4 py-6 md:px-6 md:py-10">
+    <div className="relative h-screen w-screen overflow-hidden flex items-center justify-center bg-[#0b141a] bg-[url('/bg-chat-room.png')] bg-cover bg-center px-4 py-4 md:px-6 md:py-10">
       {/* Dim Overlay */}
       <div className="absolute inset-0 bg-[#0b141a]/70" />
 
       {/* Login Card */}
       <div
-        className="relative w-full max-w-[90%] md:max-w-md flex flex-col items-center justify-center gap-4 md:gap-6 bg-[#111b21] border border-[#2a2f32] rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.35)] px-6 md:px-12 py-10 md:py-16 z-10 box-border min-h-[520px] md:min-h-[600px]"
+        className="relative w-full max-w-[90%] md:max-w-md flex flex-col items-center justify-center gap-3 md:gap-6 bg-[#111b21] border border-[#2a2f32] rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.35)] px-6 md:px-12 py-6 md:py-16 z-10 box-border max-h-[95vh] overflow-y-auto"
       >
         {/* WhatsApp Logo */}
         <div className="flex justify-center mb-4 md:mb-8">
