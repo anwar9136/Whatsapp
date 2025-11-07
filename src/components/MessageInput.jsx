@@ -30,10 +30,16 @@ export default function MessageInput({ onSend }) {
   const hasText = !!text.trim()
 
   return (
-    <div className="px-6 h-[70px] bg-(--color-panelElevated) border-t border-(--color-border) flex items-center gap-4">
+    <div 
+      className="flex items-center gap-2 px-4 py-2.5 bg-(--color-inputBg) shadow-xl border border-(--color-border) mx-3 md:mx-5 mb-3"
+      style={{
+        borderRadius: "24px",
+        minHeight: "48px",
+      }}
+    >
       <div className="flex items-center gap-1">
         <button
-          className="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-200"
+          className="w-9 h-9 flex items-center justify-center rounded-full transition-all duration-200"
           title="Emoji"
           style={{
             cursor: "pointer",
@@ -52,10 +58,10 @@ export default function MessageInput({ onSend }) {
             e.currentTarget.style.transform = "scale(1)";
           }}
         >
-          <Smile size={20} />
+          <Smile size={18} />
         </button>
         <button
-          className="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-200"
+          className="w-9 h-9 flex items-center justify-center rounded-full transition-all duration-200"
           title="Attach"
           style={{
             cursor: "pointer",
@@ -74,23 +80,24 @@ export default function MessageInput({ onSend }) {
             e.currentTarget.style.transform = "scale(1)";
           }}
         >
-          <Paperclip size={20} />
+          <Paperclip size={18} />
         </button>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 min-w-0">
         <textarea
           ref={textareaRef}
           value={text}
           onChange={e => setText(e.target.value)}
           onKeyDown={onKey}
           rows={1}
-          className="w-full resize-none px-4 py-3 rounded-xl bg-(--color-inputBg) outline-none hide-scrollbar text-textPrimary placeholder:text-textSecondary text-[15px]"
+          className="w-full resize-none px-2 py-1 bg-transparent outline-none hide-scrollbar text-textPrimary placeholder:text-textSecondary text-[15px] leading-5"
           placeholder="Type a message"
+          style={{ maxHeight: "120px" }}
         />
       </div>
       <button
         onClick={hasText ? send : undefined}
-        className={`w-10 h-10 rounded-full grid place-items-center transition-all duration-200 ${hasText ? 'bg-whatsappGreen text-white' : ''}`}
+        className={`w-9 h-9 rounded-full grid place-items-center transition-all duration-200 ${hasText ? 'bg-whatsappGreen text-white' : ''}`}
         title={hasText ? 'Send' : 'Voice'}
         style={{
           cursor: "pointer",
@@ -115,7 +122,7 @@ export default function MessageInput({ onSend }) {
           e.currentTarget.style.transform = "scale(1)";
         }}
       >
-        {hasText ? <Send size={18} /> : <Mic size={20} />}
+        {hasText ? <Send size={16} /> : <Mic size={18} />}
       </button>
     </div>
   )

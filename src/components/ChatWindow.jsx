@@ -216,24 +216,14 @@ export default function ChatWindow({ chatId, chatInfo, onBack, isMobile }) {
       </div>
 
       {/* Input */}
-      <div
-  className="border-t"
-  style={{
-    padding: '10px',
-    backgroundColor: 'var(--color-panelElevated)',
-    borderTop: '1px solid var(--color-border)',
-    borderRadius: '30px',
-    margin: '10px',
-    boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.15)',
-  }}
->
-  <MessageInput
-    onSend={send}
-    chatId={chatId}
-    onTyping={handleTyping}
-    onStopTyping={handleStopTyping}
-  />
-</div>
+      <div className="px-3 md:px-5 pb-8 pt-3 bg-transparent">
+        <MessageInput
+          onSend={send}
+          chatId={chatId}
+          onTyping={handleTyping}
+          onStopTyping={handleStopTyping}
+        />
+      </div>
     </div>
   )
 }

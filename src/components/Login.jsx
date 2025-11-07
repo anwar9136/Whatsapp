@@ -37,10 +37,11 @@ export default function Login({ onLoginSuccess }) {
 
       {/* Login Card */}
       <div
-        className="relative w-full max-w-[90%] md:max-w-md flex flex-col items-center justify-center gap-3 md:gap-6 bg-[#111b21] border border-[#2a2f32] rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.35)] px-6 md:px-12 py-6 md:py-16 z-10 box-border max-h-[95vh] overflow-y-auto"
+        className="relative w-[50%] max-w-[90%] md:max-w-md flex flex-col items-center justify-center gap-3 md:gap-4 bg-[#111b21] border border-[#2a2f32] rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.35)] px-6 md:px-12 py-6 md:py-16 z-10 box-border max-h-[95vh] overflow-y-auto"
+        style={{padding: "20px"}}
       >
         {/* WhatsApp Logo */}
-        <div className="flex justify-center mb-4 md:mb-8">
+        <div className="flex justify-center mb-4 md:mb-5">
           <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-[#25d366] flex items-center justify-center shadow-lg">
             <svg viewBox="0 0 32 32" className="w-10 h-10 md:w-12 md:h-12 text-white" fill="currentColor">
               <path d="M16 0C7.164 0 0 7.164 0 16c0 2.826.738 5.577 2.137 7.965L.512 30.98c-.15.446.218.814.664.664l7.015-1.625A15.937 15.937 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.646 0-5.207-.787-7.393-2.275l-.415-.283-4.302 1.003 1.003-4.302-.283-.415A13.267 13.267 0 0 1 2.667 16C2.667 8.648 8.648 2.667 16 2.667S29.333 8.648 29.333 16 23.352 29.333 16 29.333z" />
@@ -51,12 +52,14 @@ export default function Login({ onLoginSuccess }) {
 
         {/* Heading */}
         <div className="text-center mb-4 md:mb-6">
-          <h1 className="text-[24px] md:text-[32px] font-bold text-white mb-2 tracking-tight">WhatsApp Web</h1>
-          <p className="text-xs md:text-sm text-[#8696a0]">Sign in to continue</p>
+          <h1 className="text-[22px] md:text-[32px] font-semibold text-white mb-2 tracking-tight"
+          style={{fontSize: "30px", fontWeight: "bold"}}
+          >WhatsApp Web</h1>
+          <p className="text-[11px] md:text-[15px] text-[#8696a0]">Sign in to continue</p>
         </div>
 
         {/* Form area */}
-        <div className="flex flex-col gap-4 md:gap-6 w-full mx-auto">
+        <div className="flex flex-col gap-4 md:gap-6 w-full px-2 md:px-3">
           {/* Username */}
           <div>
             <label className="block text-xs text-[#8696a0] mb-2 font-medium">Username</label>
@@ -65,7 +68,8 @@ export default function Login({ onLoginSuccess }) {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Enter your number"
-              className="w-full h-12 md:h-16 px-5 py-3 md:py-4 bg-[#1f2c33] text-white text-[14px] md:text-[15px] rounded-xl border border-[#24323a] hover:border-[#3b4a54] focus:border-[#00a884] focus:ring-2 focus:ring-[#00a884]/50 outline-none transition-all duration-200"
+              className="w-full h-12 md:h-16 px-5 py-3 md:py-4 bg-[#1f2c33] text-white text-xs md:text-base rounded-xl border border-[#24323a] hover:border-[#3b4a54] focus:border-[#00a884] focus:ring-2 focus:ring-[#00a884]/50 outline-none transition-all duration-200"
+              style={{ fontSize: '15px' }}
             />
           </div>
 
@@ -78,14 +82,16 @@ export default function Login({ onLoginSuccess }) {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                className="w-full h-12 md:h-16 pl-5 pr-10 md:pr-12 py-3 md:py-4 bg-[#1f2c33] text-white text-[14px] md:text-[15px] rounded-xl border border-[#24323a] hover:border-[#3b4a54] focus:border-[#00a884] focus:ring-2 focus:ring-[#00a884]/50 outline-none transition-all duration-200"
+                className="w-full h-12 md:h-16 pl-5 pr-10 md:pr-12 py-3 md:py-4 bg-[#1f2c33] text-white text-xs md:text-base rounded-xl border border-[#24323a] hover:border-[#3b4a54] focus:border-[#00a884] focus:ring-2 focus:ring-[#00a884]/50 outline-none transition-all duration-200"
+                style={{ fontSize: '15px' }}
               />
               <button
                 type="button"
                 onClick={() => setShowPassword((v) => !v)}
                 className="absolute inset-y-0 right-0 flex items-center px-3 text-[#8696a0] hover:text-white transition-colors"
+                aria-label={showPassword ? 'Hide password' : 'Show password'}
               >
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
               </button>
             </div>
           </div>
@@ -102,10 +108,10 @@ export default function Login({ onLoginSuccess }) {
   <button
     onClick={handleSubmit}
     disabled={loading}
-    className={`w-[50%] md:w-[40%] h-12 md:h-14 bg-linear-to-r from-[#00a884] to-[#019974] hover:from-[#00b493] hover:to-[#018d6f] text-white text-[14px] md:text-[16px] font-bold rounded-xl shadow-[0_8px_24px_rgba(0,168,132,0.35)] focus:outline-none focus:ring-2 focus:ring-[#00a884]/60 transition-all duration-200 cursor-pointer ${
+    className={`w-[50%] md:w-[40%] h-12 md:h-14 bg-linear-to-r from-[#00a884] to-[#019974] hover:from-[#00b493] hover:to-[#018d6f] text-white text-xs md:text-base font-bold rounded-xl shadow-[0_8px_24px_rgba(0,168,132,0.35)] focus:outline-none focus:ring-2 focus:ring-[#00a884]/60 transition-all duration-200 cursor-pointer ${
       loading ? "opacity-70 cursor-not-allowed" : ""
     }`}
-    style={{borderRadius: "10px"}}
+    style={{borderRadius: "10px", fontSize: '17px', fontWeight: "bold"}}
   >
     {loading ? "Signing in..." : "Sign in"}
   </button>
@@ -113,7 +119,7 @@ export default function Login({ onLoginSuccess }) {
         </div>
 
         {/* Footer */}
-        <div className="mt-4 md:mt-8 flex items-center justify-center text-[10px] md:text-[12px] text-[#8696a0] px-2">
+        <div className="mt-4 md:mt-8 flex items-center justify-center text-[10px] md:text-sm text-[#8696a0] px-2" style={{ fontSize: '11px' }}>
           <svg
             className="w-3.5 h-3.5 mr-2"
             fill="none"
