@@ -37,7 +37,7 @@ export default function Login({ onLoginSuccess }) {
 
       {/* Login Card */}
       <div
-        className="relative w-[50%] max-w-[90%] md:max-w-md flex flex-col items-center justify-center gap-3 md:gap-4 bg-[#111b21] border border-[#2a2f32] rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.35)] px-6 md:px-12 py-6 md:py-16 z-10 box-border max-h-[95vh] overflow-y-auto"
+        className="relative w-full max-w-[92%] md:max-w-md flex flex-col items-center justify-center gap-3 md:gap-4 bg-[#111b21] border border-[#2a2f32] rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.35)] px-6 md:px-12 py-6 md:py-16 z-10 box-border max-h-[95vh] overflow-y-auto"
         style={{padding: "20px"}}
       >
         {/* WhatsApp Logo */}
@@ -69,7 +69,7 @@ export default function Login({ onLoginSuccess }) {
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Enter your number"
               className="w-full h-12 md:h-16 px-5 py-3 md:py-4 bg-[#1f2c33] text-white text-xs md:text-base rounded-xl border border-[#24323a] hover:border-[#3b4a54] focus:border-[#00a884] focus:ring-2 focus:ring-[#00a884]/50 outline-none transition-all duration-200"
-              style={{ fontSize: '15px' }}
+              style={{ fontSize: '16px' }}
             />
           </div>
 
@@ -83,7 +83,7 @@ export default function Login({ onLoginSuccess }) {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 className="w-full h-12 md:h-16 pl-5 pr-10 md:pr-12 py-3 md:py-4 bg-[#1f2c33] text-white text-xs md:text-base rounded-xl border border-[#24323a] hover:border-[#3b4a54] focus:border-[#00a884] focus:ring-2 focus:ring-[#00a884]/50 outline-none transition-all duration-200"
-                style={{ fontSize: '15px' }}
+                style={{ fontSize: '16px' }}
               />
               <button
                 type="button"
