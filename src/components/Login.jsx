@@ -108,10 +108,10 @@ export default function Login({ onLoginSuccess }) {
   <button
     onClick={handleSubmit}
     disabled={loading}
-    className={`w-[50%] md:w-[40%] h-12 md:h-14 bg-linear-to-r from-[#00a884] to-[#019974] hover:from-[#00b493] hover:to-[#018d6f] text-white text-xs md:text-base font-bold rounded-xl shadow-[0_8px_24px_rgba(0,168,132,0.35)] focus:outline-none focus:ring-2 focus:ring-[#00a884]/60 transition-all duration-200 cursor-pointer ${
+    className={`w-[55%] md:w-[40%] h-12 md:h-14 bg-linear-to-r from-[#00a884] to-[#019974] hover:from-[#00b493] hover:to-[#018d6f] text-white text-xs md:text-base font-bold rounded-xl shadow-[0_6px_18px_rgba(0,168,132,0.25)] md:shadow-[0_10px_28px_rgba(0,168,132,0.35)] focus:outline-none focus:ring-2 focus:ring-[#00a884]/60 transition-all duration-200 cursor-pointer ${
       loading ? "opacity-70 cursor-not-allowed" : ""
     }`}
-    style={{borderRadius: "10px", fontSize: '17px', fontWeight: "bold"}}
+    style={{borderRadius: "10px", fontSize: '16px', fontWeight: 'bold'}}
   >
     {loading ? "Signing in..." : "Sign in"}
   </button>

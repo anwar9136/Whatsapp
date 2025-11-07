@@ -216,7 +216,10 @@ export default function ChatWindow({ chatId, chatInfo, onBack, isMobile }) {
       </div>
 
       {/* Input */}
-      <div className="px-3 md:px-5 pb-8 pt-3 bg-transparent">
+      <div
+        className="sticky bottom-0 left-0 right-0 px-3 md:px-5 pb-6 pt-3 bg-(--color-panelElevated)/80 backdrop-blur-sm"
+        style={{ paddingBottom: 'max(18px, env(safe-area-inset-bottom))' }}
+      >
         <MessageInput
           onSend={send}
           chatId={chatId}
